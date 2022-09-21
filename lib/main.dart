@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:multiple_widget/date_picker.dart';
 import 'package:multiple_widget/popup.dart';
 
 void main() {
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const PupopWidget(),
+      home: const DatePickerWidget(),
     );
   }
 }
