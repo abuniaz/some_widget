@@ -13,6 +13,30 @@ class _PupopWidgetState extends State<PupopWidget> {
   String secondPage = 'Second Page';
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('PopupMenu'),
+        centerTitle: true,
+        actions: [
+          PopupMenuButton(
+            itemBuilder: ((context) => [
+                  PopupMenuItem(
+                    value: firstPage,
+                    child: Text(firstPage),
+                  ),
+                  PopupMenuItem(
+                    value: secondPage,
+                    child: Text(secondPage),
+                  )
+                ]),
+            onSelected: (String newValue) {
+              setState(() {
+                title = newValue;
+              });
+            },
+          )
+        ],
+      ),
+    );
   }
 }
