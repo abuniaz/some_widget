@@ -30,9 +30,11 @@ class _PupopWidgetState extends State<PupopWidget> {
                   )
                 ]),
             onSelected: (String newValue) {
-              setState(() {
-                title = newValue;
-              });
+              setState(
+                () {
+                  title = newValue;
+                },
+              );
             },
           )
         ],

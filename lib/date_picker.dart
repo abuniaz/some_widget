@@ -16,26 +16,27 @@ class _DatePickerWidgetState extends State<DatePickerWidget> {
     return CupertinoPageScaffold(
         child: Center(
       child: CupertinoButton(
-          child: const Text('Cupertino Date Picker'),
-          onPressed: () {
-            showCupertinoModalPopup(
-              context: context,
-              builder: (BuildContext context) => SizedBox(
-                height: 250,
-                child: CupertinoDatePicker(
-                  backgroundColor: Colors.blue,
-                  initialDateTime: dateTime,
-                  onDateTimeChanged: (DateTime newTime) {
-                    setState(() {
-                      dateTime = newTime;
-                    });
-                  },
-                  use24hFormat: true,
-                  mode: CupertinoDatePickerMode.date,
-                ),
+        child: const Text('Cupertino Date Picker'),
+        onPressed: () {
+          showCupertinoModalPopup(
+            context: context,
+            builder: (BuildContext context) => SizedBox(
+              height: 250,
+              child: CupertinoDatePicker(
+                backgroundColor: Colors.blue,
+                initialDateTime: dateTime,
+                onDateTimeChanged: (DateTime newTime) {
+                  setState(() {
+                    dateTime = newTime;
+                  });
+                },
+                use24hFormat: true,
+                mode: CupertinoDatePickerMode.date,
               ),
-            );
-          }),
+            ),
+          );
+        },
+      ),
     ));
   }
 }
