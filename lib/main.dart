@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:multiple_widget/cupertino_menu.dart';
 import 'package:multiple_widget/date_picker.dart';
-import 'package:multiple_widget/popup.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const DatePickerWidget(),
+      home: const CupertinoMenuContext(),
     );
   }
 }
