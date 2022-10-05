@@ -15,17 +15,20 @@ class _SliderPageState extends State<SliderPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-          child: RangeSlider(
-              labels:
-                  RangeLabels(values.start.toString(), values.end.toString()),
-              min: lvalue,
-              max: uvalue,
-              values: values,
-              onChanged: (value) {
-                setState(() {
-                  values = value;
-                });
-              })),
+          child: SliderTheme(
+        data: SliderThemeData(),
+        child: RangeSlider(
+            divisions: 20,
+            labels: RangeLabels(values.start.toString(), values.end.toString()),
+            min: lvalue,
+            max: uvalue,
+            values: values,
+            onChanged: (value) {
+              setState(() {
+                values = value;
+              });
+            }),
+      )),
     );
   }
 }
