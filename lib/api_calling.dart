@@ -33,11 +33,29 @@ class _BasicApiState extends State<BasicApi> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Api Calling'),
+        title: const Text('Api Calling'),
         centerTitle: true,
       ),
       body: Column(
-        children: [],
+        children: [
+          Expanded(
+            child: FutureBuilder(
+                future: getPhotos(),
+                builder: ((context, AsyncSnapshot<List<Photos>> snapshot) {
+                  return ListView.builder(
+                      itemCount: photoList.length,
+                      itemBuilder: ((context, index) {
+                        return ListTile(
+                          leading: CircleAvatar(
+                            backgroundImage: NetworkImage(
+                                snapshot.data![index].url.toString()),
+                          ),
+                          title: Text(snapshot.data![index].title.toString()),
+                        );
+                      }));
+                })),
+          )
+        ],
       ),
     );
   }
