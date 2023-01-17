@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
+
 import 'package:multiple_widget/api_calling.dart';
 
 import 'package:multiple_widget/slider.dart';
