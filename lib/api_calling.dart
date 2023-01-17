@@ -11,19 +11,21 @@ class BasicApi extends StatefulWidget {
 }
 
 class _BasicApiState extends State<BasicApi> {
-  List<Photos> photosList = [];
+  List<Photos> photoList = [];
+
   Future<List<Photos>> getPhotos() async {
     final response = await http
         .get(Uri.parse('https://jsonplaceholder.typicode.com/photos'));
+
     var data = jsonDecode(response.body.toString());
     if (response.statusCode == 200) {
       for (Map i in data) {
         Photos photos = Photos(title: i['title'], url: i['title']);
-        photosList.add(photos);
+        photoList.add(photos);
       }
-      return photosList;
+      return photoList;
     } else {
-      return photosList;
+      return photoList;
     }
   }
 
