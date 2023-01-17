@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:syncfusion_flutter_sliders/sliders.dart';
 
 class SliderPage extends StatefulWidget {
   const SliderPage({Key? key}) : super(key: key);
@@ -13,6 +12,8 @@ class _SliderPageState extends State<SliderPage> {
   // double uvalue = 200.0;
   // RangeValues values = const RangeValues(0.0, 200.0);
   double _value = 0.0;
+
+  var SfSlider;
   @override
   Widget build(BuildContext context) {
     return Scaffold(

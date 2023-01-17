@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
+import 'package:multiple_widget/api_calling.dart';
 
 import 'package:multiple_widget/slider.dart';
 
@@ -18,7 +20,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const SliderPage(),
+      home: const BasicApi(),
     );
   }
 }
